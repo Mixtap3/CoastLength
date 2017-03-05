@@ -1,26 +1,27 @@
 import java.util.ArrayList;
 import java.util.Scanner;
-
+import java.io.*;
 public class Main {
 
     Scanner sc;
-    int row, col;
-    ArrayList<ArrayList<Integer>> map = new ArrayList<ArrayList<Integer>>();
+    int[][] map;
 
 
     public Main(int row, int col, Scanner sc){
 
-        this.row = row;
-        this.col = col;
         this.sc = sc;
+        map = new int[row][col];
 
         makeList();
     }
 
     public void makeList(){
 
-        for(int i = 0; i < col; i++){
+        for(int i = 0; i < map.length; i++){
+            for(int j = 0; j < map[0].length; j++){
 
+                map[i][j] = sc.nextInt();
+            }
 
         }
 
@@ -32,6 +33,9 @@ public class Main {
     }
 
     public static void main(String[] args) {
+
+//        File file = new File("samples/coast-sample-1.in");
+//        System.setIn(new FileInputStream(file));
 
         Scanner sc = new Scanner(System.in);
 
